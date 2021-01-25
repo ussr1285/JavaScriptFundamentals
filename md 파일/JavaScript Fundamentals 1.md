@@ -6,6 +6,8 @@
 
 
 
+
+
 ## 소개
 
 ### 자바스크립트는 무엇인가?
@@ -40,7 +42,10 @@ HTML: 구조, CSS: style, JavaScript:
 
 - JavaScript로 HTML과 CSS 수정 가능 -> (이 점을 극대화시킨 것이 React에서 주로 사용하는 JSX? 가상 DOM을 이용해 문서 정보와 Style을 전부 javascript 파일 내에서 다룸.)  [참고한 사이트](https://d2.naver.com/helloworld/9297403#ch2)
 
-  
+
+
+
+
 
 ### JavaScript의 역사
 
@@ -72,14 +77,19 @@ HTML: 구조, CSS: style, JavaScript:
 
     - 이제 ECMAScript 표준 아래에서 똑같아짐. 
 
-      
+  
 
+  
+
+  
   - 2nd Browser War
-
+  
     - 크롬 웹 브라우저의 등장, Internet Explorer의 몰락. 
     - 가장 큰 이유는 Google사의 Android OS의 등장. -> 윈도우 점유율을 따라 인터넷 익스플로러 점유율이 늘어난 것처럼, 크롬도 마찬가지였음.
     - 또 다른 이유는 크롬 브라우저의 성능. Google이 JavaScript의 속도를 획기적으로 빠르게 만든 V8 엔진을 개발함 (훗날 이에 기반하여 Node.js 탄생하게 됨.)
     - HTML5 표준
+
+
 
 
 
@@ -93,7 +103,11 @@ HTML: 구조, CSS: style, JavaScript:
 
 
 
+
+
 -------- 사실 여기까지는 별로 안 중요함 --------
+
+
 
 
 
@@ -113,15 +127,46 @@ HTML: 구조, CSS: style, JavaScript:
 
 
 
+
+
 ## JavaScript 기초 문법 
 
 ### JavaScript를 사용하는 방법
 
-##### 아래에서 다시 설명할 예정
-
 - 웹브라우저(크롬) 개발자모드
+  - 크롬에서 F12 누르고 console 탭에서 사용.
+
+
+
+
+
 - HTML 파일에 삽입
+  - script 태그는 브라우저의 html 문서 렌더링을 멈추게 하므로 웬만하면 body 태그가 닫히기 직전에 호출 할 것
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="button" id="hw" value="Hello world" />
+    <script type="text/javascript">
+    	
+    </script>
+    <script type="text/javascript" src="./파일명.js"></script> <!-- body 태그 닫히기 직전에 호출 -->
+</body>
+</html>
+```
+
+
+
+
+
 - Node.js
+
+```shell
+node ./index.js
+```
+
+
 
 
 
@@ -141,6 +186,8 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
 시진핑 주석
 */
 ```
+
+
 
 
 
@@ -166,7 +213,9 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
 
     (ex.  let은 처음에 숫자형으로 선언하면 숫자형으로만 변환 가능, var은 처음에 숫자형으로 선언해도 문자형 등으로 변환 가능.)
 
-    
+
+
+
 
 - 상수 (Constant) : 이름이 붙은 값이며, 한 번 할당한 값을 바꿀 수 없음 (ES6에서 추가됨)
 
@@ -174,45 +223,43 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
   const NEVER_CHANGE = 525;
   NEVER_CHANGE = 10; // 에러 발생: Uncaught TypeError: Assignment to constant variable.
   ```
-  
+
     - 런타임 중, 변경되면 안되는 값을 상수로 지정함.
     - **대문자**와 언더바(_)로 이름 붙여야 하는 규칙이 있음.
+
   
+
   
+
   
-  
-  
-  여기서 문제 1.
-  
+
+  ------------- 여기서 문제 1. ---------------
+
   다음중 ES6 (ECMA Script6)에서 권고하는 JavaScript의 변수 선언 코드는 무엇인가.
-  
+
   1. var 변수명;
   2. let 변수명;
   3. const 변수명;
   4. console.log 변수명;
+
   
-  
-  
+
   [정답](2번)
+
   
-  
-  
-  ### 식별자 (변수명, 상수명 및 함수명 등)
-  
-  - **식별자**는 간단하게 그냥 이름이라고 보면 됩니다.
-    
-  - 변수와 함수에 이름을 붙일때 사용함.
-    
-  - 식별자의 첫 기호는 반드시 문자나, 언더바(_), 달러 사인($)으로 시작해야 합니다. 이후부터는 문자, 숫자, 밑줄 또는 달러 기호일 수 있습니다.
-  
-    ``` javascript
-    let greetings = "Hello world!";
-    let saying_goodbye = "Good bye";
-    let _console = 3;
-    let $php = false;
-    let 2ndGreetings = "Good evening, sir!" // 식별자가 숫자로 시작하여서 오류 발생.
-    ```
-  
+
+
+
+
+
+### 식별자 (변수명, 상수명 및 함수명 등)
+
+- **식별자**는 간단하게 그냥 이름이라고 보면 됩니다.
+
+- 변수와 함수에 이름을 붙일때 사용함.
+
+- 식별자의 첫 기호는 반드시 문자나, 언더바(_), 달러 사인($)으로 시작해야 합니다. 이후부터는 문자, 숫자, 밑줄 또는 달러 기호일 수 있습니다.
+
 - **예약어**로 이미 지정되어 있는 이름은, 식별자로 사용할 수 없습니다.
 
   ```
@@ -249,16 +296,19 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
 
     - 이 방식은 파이썬에서 주로 사용되는 것으로 알고 있습니다.
     
-  - Other conventions
+      
+  
+  - 또 다른 내용
+  
+    - 식별자 중 클래스(Class)만 첫문자를 대문자로 시작할 수 있다.
+    - 하나 또는 두 개의 언더바( _ )로 시작하는 식별자는, 종종 특수 변수 또는 "내부" 변수를 나타내기 위해 사용됩니다. 고유한 특수 변수 카테고리를 생성할 필요가 없는 경우 밑줄로 변수 이름을 시작하지 마십시오.
+    - jQuery를 사용할 때 달러($) 기호로 시작하는 식별자는 일반적으로 jQuery로 포장된 개체를 참조합니다.
 
-    - Identifiers shouldn’t start with a capital letter except for classes 
-    - Very often, identifiers that start with one or two underscores are used to represent special or “internal” variables. Unless you need to create your own special category of variables, avoid starting variable names with an underscore. 
-    - When using jQuery, identifiers that start with a dollar sign conventionally refer to jQuerywrapped objects
 
 
 
 
-여기서 문제2. 아래 변수를 지정하는 코드 중 실행하면 오류가 나는 것은?
+---------- 여기서 문제2. 아래 변수를 지정하는 코드 중 실행하면 오류가 나는 것은? ----------
 
 ```javascript
 let mouse_sum = 6;
@@ -268,6 +318,8 @@ let mouseSum = 9; // 4번
 ```
 
 [정답](3번)
+
+
 
 
 
@@ -317,20 +369,48 @@ const object = {}; // {} = 객체 리터럴.
 
   ​	⑥ Symbol
 
-  
+
+
+
+
 
 - 객체 타입 (Object types)
 
-  - a collection of properties where each property has a name and a value (either a primitive value, such as a number or string, or an object)
+  - 객체(Object)란 물리적으로 존재하거나 추상적으로 생각할 수 있는 것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것을 말합니다. [참고한 사이트](https://jwprogramming.tistory.com/121)
 
+  - 객체 내의 함수는 메소드라고 부름.
+
+    ```javascript
+    var person = {
+      name: 'Bob',
+    age: 32,
+      gender: 'male',
+    interests: 'music',
+        
+      bio: function() {
+        alert(this.name + ' is ' + this.age + ' years old. He likes ' + this.interests);
+      },
+        
+      greeting: function() {
+        alert('Hi! I\'m ' + this.name[0] + '.');
+      }
+        
+    };
+    
+    console.log(person.name); // 객체 내 
+    person.bio(); // 객체 내 메소드 실행해 봄.
+    ```
+  
+    [참고한 사이트](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Basics)
+  
   - **내장 객체** (built-in objects)
-
+  
     - **배열**은 특별한 종류의 객체이다. 순서를 가진 값들의 집합체.
     - **Date**, RegExp, Map(& WeakMap), Set (& WeakSet) 
     - **Boolean, String, Number Objects:** primitive type에 대응하는 객체 타입
-
+  
   - **Literal syntax: curly braces**
-
+  
     ```javascript
     const obj = {};
     obj.color = “yellow”;
@@ -339,11 +419,13 @@ const object = {}; // {} = 객체 리터럴.
 
 
 
+
+
 ### 기본 자료형: 숫자형
 
 - 숫자형 (Numbers)
 
-  - JavaScript 는 하나의 numeric data type 만을 가짐 
+  - JavaScript 는 하나의 numeric data type 만을 가짐. (전부 double 형)
 
     (IEEE-764 double-precision floating-point 기반) 
 
@@ -366,6 +448,8 @@ const inf = Infinity;
 const ninf = -Infinity;
 const nan = NaN; // "not a number"
 ```
+
+
 
 
 
@@ -393,16 +477,19 @@ const nan = NaN; // "not a number"
   const dialog1 = "He looked up and said \"don't do that!\" to Max.";
   ```
 
-  
+
+
+
+
 
 ### 기본 자료형: Special Character, Template Strings
 
 - Special Characters
 
   ```javascript
-  '\n' Newline (a line feed character: ASCII/Unicode 10): Linux newline
-  '\r' Carriage return (ASCII/Unicode 13): MacOS use this for a newline
-  '\t' Tab (ASCII/Unicode 9)
+  '\n' Newline (a line feed character: ASCII/Unicode 10): Linux newline // 한 줄 띄어쓰기
+  '\r' Carriage return (ASCII/Unicode 13): MacOS use this for a newline // 커서 맨 앞에 위치
+  '\t' Tab (ASCII/Unicode 9) // tab 한번 누르기
   ```
 
   - WinOS uses \r\n for a newline
@@ -418,6 +505,8 @@ const nan = NaN; // "not a number"
     ```
 
   - Inside a string template, the dollar sign($) becomes a special character if it’s followed by a value3 wrapped in curly braces{ }, that value is inserted into the string.
+
+
 
 
 
@@ -519,8 +608,8 @@ book.author = “Ethan"; // Create new properties by assignment.
 
 - 배열 (Arrays)
 
-  - Array contents have a natural order (element 0 will always come before element 1), and keys are numeric and sequential.
-  - Syntax: square brackets [ ]
+  - 배열의 인덱스(key)는 연속적인 정수로 이뤄져있고, 0부터 시작한다.
+  - 문법: 대괄호 [ ]를 사용한다.
   - Properties of Array
     - Array size is not fixed; you can add or remove elements at any time. 
     - Arrays are not homogeneous; each individual element can be of any type. 
@@ -564,9 +653,9 @@ trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
 
 
 
-### Data Type Conversion
+### 자료형(데이터형) 변환
 
-- Converting to Numbers
+- 문자열을 숫자로 변환
 
   ```javascript
   const numStr = "33.3";
@@ -580,7 +669,7 @@ trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
   const b = parseInt("3a", 16); // parse hexadecimal 3a; result is 58
   ```
 
-- Converting to String
+- 숫자를 문자열로 변환
 
   ```javascript
   const n = 33.5;
@@ -593,7 +682,7 @@ trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
 
 
 
-여기서 마지막 문제 3번. 다음 중 틀린 말을 고르시오.
+----------- 여기서 마지막 문제 3번. 다음 중 객체인 자료형을 고르시오. ------------
 
 
 
