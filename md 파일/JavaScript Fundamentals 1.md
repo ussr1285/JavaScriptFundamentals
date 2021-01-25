@@ -2,7 +2,9 @@
 
 이 문서는 아주대학교 정보통신대학 소프트웨어과의 웹 시스템 설계 9. JavaScript: Fundamentals (1/2) 챕터에 기반하여 작성되었습니다.
 
- 수업 목표: 자바스크립트가 무엇인지 파악하기.
+작성자: 조민재
+
+수업 목표: 자바스크립트가 무엇인지 파악하기.
 
 
 
@@ -16,31 +18,37 @@
 
 JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와는 다르게 프로그래밍 언어입니다.
 
-HTML: 구조, CSS: style, JavaScript: 
+![html5](.\img\html5.png)
 
-- 마크업 언어:
+- 마크업 언어 (HTML)
 
   - 태그 등을 이용하여 문서나 데이터의 구조를 명기하는 언어. -> 구조, 정보
 
-- 스타일 시트
+- 스타일 시트 (CSS)
 
   - 마크업 언어가 실제 표시되는 방법을 기술하는 언어. -> 스타일 (디자인)
 
-- 프로그래밍 언어
+- 프로그래밍 언어 (JavaScript)
 
   - 컴퓨터 시스템을 구동시키는 소프트웨어를 작성하기 위한 형식언어이다. -> 기능성 & 동적성
+
+    
 
 - JavaScript는 스크립트 언어입니다.
 
   - 스크립트 언어는 **독립된 시스템에서 작동하도록 특별히 설계된 프로그래밍 언어**입니다. **응용 프로그램과는 독립적**이고, **사용자가 직접 프로그램을 의도에 따라 동작시킬 수 있다**는 것입니다.  [참고한 사이트](https://wormwlrm.github.io/2018/10/03/What-is-the-difference-between-javascript-and-ecmascript.html)
 
+    
+
 - JavaScript는 인터프리트 언어입니다. 하지만 JIT (Just In Time) 컴파일러
 
   - 자바스크립트는 사전 컴파일 없이 런타임에 실행됩니다. 
+  - 하지만 JIT 컴파일로, 프로그램을 실제 실행하는 시점에서 기계어로 번역하는 컴파일 기법을 사용한다고 합니다. [참고한 자료](https://ko.wikipedia.org/wiki/JIT_%EC%BB%B4%ED%8C%8C%EC%9D%BC)
+  - (ex. 컴파일 언어: C, 인터프리트 언어: Python)
 
-- (ex. 컴파일 언어: C, 인터프리트 언어: Python)
+  
 
-- JavaScript로 HTML과 CSS 수정 가능 -> (이 점을 극대화시킨 것이 React에서 주로 사용하는 JSX? 가상 DOM을 이용해 문서 정보와 Style을 전부 javascript 파일 내에서 다룸.)  [참고한 사이트](https://d2.naver.com/helloworld/9297403#ch2)
+- JavaScript로 DOM을 건드려, HTML과 CSS 수정 가능 -> (이 점을 극대화시킨 것이 React에서 주로 사용하는 JSX? 가상 DOM을 이용해 문서 정보와 Style을 전부 javascript 파일 내에서 다룸.)  [참고한 사이트](https://d2.naver.com/helloworld/9297403#ch2)
 
 
 
@@ -77,16 +85,31 @@ HTML: 구조, CSS: style, JavaScript:
 
     - 이제 ECMAScript 표준 아래에서 똑같아짐. 
 
-  
 
   
 
   
+
   - 2nd Browser War
-  
+
+    <img src="./img/066bba65c8fa06174e52dd2677fc48d22d1d4e56071ff966a2336f30b70cbeee2d2306a636b06717963f55ddf442f5b5353d2b46871c6eebcd6600a19eb5403e8c6397d6bb0da76b9bb068aa271e0ca6c6.png" alt="js" style="zoom:50%;" />
+
+    ![android](./img/9eff39b6b924f7c5b914d4a2d26d72627a53dbd65d31e284e202a33aabaec335c93dac38271f99365f18292ea0e7c4a6e2eb9fc7c7acfad26517de4e07884e7cf86ca54bbc99c67cbd1aaa4dfc6234b4db.png)
+
+    
+
     - 크롬 웹 브라우저의 등장, Internet Explorer의 몰락. 
-    - 가장 큰 이유는 Google사의 Android OS의 등장. -> 윈도우 점유율을 따라 인터넷 익스플로러 점유율이 늘어난 것처럼, 크롬도 마찬가지였음.
-    - 또 다른 이유는 크롬 브라우저의 성능. Google이 JavaScript의 속도를 획기적으로 빠르게 만든 V8 엔진을 개발함 (훗날 이에 기반하여 Node.js 탄생하게 됨.)
+
+      - 가장 큰 이유는 Google사의 Android OS의 등장. -> 윈도우 점유율을 따라 인터넷 익스플로러 점유율이 늘어난 것처럼, 크롬도 마찬가지였음.
+
+        
+
+        ![220px-Node.js_logo.svg](./img/220px-Node.js_logo.svg.png)
+
+      - 또 다른 이유는 크롬 브라우저의 성능. Google이 JavaScript의 속도를 획기적으로 빠르게 만든 V8 엔진을 개발함 (훗날 이에 기반하여 Node.js 탄생하게 됨.)
+
+        
+
     - HTML5 표준
 
 
@@ -112,6 +135,8 @@ HTML: 구조, CSS: style, JavaScript:
 
 
 ### JavaScript 의 역할
+
+<img src="./img/js.png" alt="js" style="zoom:50%;" />
 
 - style을 적용하기 위해, dynamic하게 content를 바꾸기
 
@@ -148,9 +173,10 @@ HTML: 구조, CSS: style, JavaScript:
 <html>
 <body>
     <input type="button" id="hw" value="Hello world" />
-    <script type="text/javascript">
-    	
+    <script type="text/javascript"> <!-- html 파일 내에서 스크립트 작성 -->
+    	alert("In html file");
     </script>
+    
     <script type="text/javascript" src="./파일명.js"></script> <!-- body 태그 닫히기 직전에 호출 -->
 </body>
 </html>
@@ -349,7 +375,10 @@ const object = {}; // {} = 객체 리터럴.
   null // Absence of an object
   ```
 
-  
+
+
+
+
 
 ### JavaScript의 자료형들
 
@@ -368,8 +397,6 @@ const object = {}; // {} = 객체 리터럴.
   ​	⑤ undefined 
 
   ​	⑥ Symbol
-
-
 
 
 
@@ -407,7 +434,7 @@ const object = {}; // {} = 객체 리터럴.
   
     - **배열**은 특별한 종류의 객체이다. 순서를 가진 값들의 집합체.
     - **Date**, RegExp, Map(& WeakMap), Set (& WeakSet) 
-    - **Boolean, String, Number Objects:** primitive type에 대응하는 객체 타입
+    - **Boolean, 문자열( String ), Number Objects:** primitive type에 대응하는 객체 타입
   
   - **Literal syntax: curly braces**
   
@@ -462,8 +489,6 @@ const nan = NaN; // "not a number"
   - Unicode text
 
     - Unicode is a computing industry standard for representing text data, and includes code points for every character or symbol in most known human languages
-
-      
 
   - 따옴표 (' ')나 큰 따옴표 (" "), 혹은 백틱 (``)을 사용합니다.
 
@@ -523,6 +548,8 @@ const nan = NaN; // "not a number"
 
 
 
+
+
 ### 기본 자료형: Symbol (new in ES6)
 
 - Symbol is a new data type representing unique tokens. Once you create a symbol, it is unique: it will match no other symbol.
@@ -538,6 +565,8 @@ const nan = NaN; // "not a number"
     const ORANGE = Symbol("The color of a sunset!");
     RED === ORANGE // false: every symbol is unique
     ```
+
+
 
 
 
@@ -564,9 +593,12 @@ const nan = NaN; // "not a number"
     // been initialized; not recommended
     ```
 
-    
 
-### 기본 자료형: Objects 
+
+
+
+
+### 기본 자료형: 객체 (Objects)
 
 - Objects
 
@@ -601,6 +633,8 @@ book.topic // => "JavaScript"
 book[“useful"] // => true: another way to access property values.
 book.author = “Ethan"; // Create new properties by assignment.
 ```
+
+
 
 
 
@@ -650,6 +684,8 @@ trial1: [[1,2], [3,4]], // The value of each property is an array.
 trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
 };
 ```
+
+
 
 
 
