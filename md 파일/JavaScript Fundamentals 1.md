@@ -18,7 +18,7 @@
 
 JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와는 다르게 프로그래밍 언어입니다.
 
-![html5](.\img\html5.png)
+![html5](https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/html5.png?raw=true)
 
 - 마크업 언어 (HTML)
 
@@ -92,9 +92,9 @@ JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와
 
   - 2nd Browser War
 
-    <img src="./img/066bba65c8fa06174e52dd2677fc48d22d1d4e56071ff966a2336f30b70cbeee2d2306a636b06717963f55ddf442f5b5353d2b46871c6eebcd6600a19eb5403e8c6397d6bb0da76b9bb068aa271e0ca6c6.png" alt="js" style="zoom:50%;" />
+    <img src="https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/066bba65c8fa06174e52dd2677fc48d22d1d4e56071ff966a2336f30b70cbeee2d2306a636b06717963f55ddf442f5b5353d2b46871c6eebcd6600a19eb5403e8c6397d6bb0da76b9bb068aa271e0ca6c6.png?raw=true" alt="js" style="zoom:50%;" />
 
-    ![android](./img/9eff39b6b924f7c5b914d4a2d26d72627a53dbd65d31e284e202a33aabaec335c93dac38271f99365f18292ea0e7c4a6e2eb9fc7c7acfad26517de4e07884e7cf86ca54bbc99c67cbd1aaa4dfc6234b4db.png)
+    ![android](https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/9eff39b6b924f7c5b914d4a2d26d72627a53dbd65d31e284e202a33aabaec335c93dac38271f99365f18292ea0e7c4a6e2eb9fc7c7acfad26517de4e07884e7cf86ca54bbc99c67cbd1aaa4dfc6234b4db.png?raw=true)
 
     
 
@@ -136,7 +136,7 @@ JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와
 
 ### JavaScript 의 역할
 
-<img src="./img/js.png" alt="js" style="zoom:50%;" />
+<img src="https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/js.png?raw=true" alt="js" style="zoom:50%;" />
 
 - style을 적용하기 위해, dynamic하게 content를 바꾸기
 
@@ -155,6 +155,12 @@ JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와
 
 
 ## JavaScript 기초 문법 
+
+<img src="https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/%EB%A8%B9%EA%B3%A0%20%EC%94%BB%EA%B3%A0%20%EC%97%B0%EC%95%A0%ED%95%98%EA%B3%A0%20%EC%82%AC%ED%9A%8C%EC%83%9D%ED%99%9C%EC%9D%84%20%ED%95%98%EB%8A%94%20%EA%B1%B4%20%EC%BD%94%EB%94%A9%20%EC%8B%9C%EA%B0%84%EC%97%90%20%EB%B0%A9%ED%95%B4%EA%B0%80%20%EB%90%A9%EB%8B%88%EB%8B%A4-%EC%99%84%EC%84%B1%EB%B3%B8.png?raw=true" alt="js" style="zoom:30%;" />
+
+
+
+
 
 ### JavaScript를 사용하는 방법
 
@@ -261,14 +267,14 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
 
   ------------- 여기서 문제 1. ---------------
 
-  다음중 ES6 (ECMA Script6)에서 권고하는 JavaScript의 변수 선언 코드는 무엇인가.
+  다음중 ES6 (ECMA Script6)에서 권고하는 JavaScript의 **변수** 선언 코드는 무엇인가.
 
-  1. var 변수명;
-  2. let 변수명;
-  3. const 변수명;
-  4. console.log 변수명;
-
-  
+  ```
+  var 변수명; // 1번
+  let 변수명; // 2번
+  const 변수명; // 3번
+  console.log 변수명; // 4번
+  ```
 
   [정답](2번)
 
@@ -334,10 +340,12 @@ console.log(0.3 + 0.03); // 결과는 0.32999999999999996 이다. 실수형 연�
 
 
 
----------- 여기서 문제2. 아래 변수를 지정하는 코드 중 실행하면 오류가 나는 것은? ----------
+---------- 여기서 문제2. ----------
 
-```javascript
-let mouse_sum = 6;
+아래 변수를 지정하는 코드 중 실행하면 오류가 나는 것은? 
+
+```
+let mouse_sum = 6; // 1번
 let func = 7; // 2번
 let function = 8; // 3번
 let mouseSum = 9; // 4번
@@ -419,7 +427,7 @@ const object = {}; // {} = 객체 리터럴.
       },
         
       greeting: function() {
-        alert('Hi! I\'m ' + this.name[0] + '.');
+        alert('Hi! I\'m ' + this.name + '.');
       }
         
     };
@@ -600,18 +608,39 @@ const nan = NaN; // "not a number"
 
 ### 기본 자료형: 객체 (Objects)
 
-- Objects
+- Container of contents (properties)
+  - Objects can represent multiple or complex values, and can change over their lifetime.
+  - 중괄호로 감싸야 함. { }
+  
+- 키와 값 한쌍임.
 
-  - Container of contents (properties)
-    - Objects can represent multiple or complex values, and can change over their lifetime.
-    - Syntax: curly brackets { }
-  - Properties is a pair of a name(a key) and value
+  ```javascript
+  var person = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male',
+    interests: 'music',
+      
+    bio: function() {
+      alert(this.name + ' is ' + this.age + ' years old. He likes ' + this.interests);
+    },
+      
+    greeting: function() {
+      alert('Hi! I\'m ' + this.name + '.');
+    }
+      
+  };
+  
+  console.log(person.name); // 객체 내 
+  person.bio(); // 객체 내 메소드 실행해 봄.
+  ```
+
 
 - Objects can also contain functions
 
   ```java
-  sam3.speak = function() { return "Meow!"; };
-  sam3.speak(); // "Meow!"
+  person.sell = function() { alert("Take a look."); };
+  person.sell();
   ```
 
 - Delete property
@@ -622,17 +651,26 @@ const nan = NaN; // "not a number"
 
   
 
+
+
+----------- 여기서 마지막 문제 3번. ------------
+
+아래 코드를 활용해 객체를 만들려고 한다. 다음 중 객체를 만들기 위해 Ⓐ에 활용해야 하는 기호는 무엇인가?
+
 ```javascript
-// An object is a collection of name/value pairs, or a string to value map.
-const book = { // Objects are enclosed in curly braces.
-topic: "JavaScript", // The property "topic" has value "JavaScript".
-useful: true // The property "fat" has value true.
-}; // The curly brace marks the end of the object.
-// Access the properties of an object with . or [ ]:
-book.topic // => "JavaScript"
-book[“useful"] // => true: another way to access property values.
-book.author = “Ethan"; // Create new properties by assignment.
+var person = Ⓐ
+  name: 'Bob',
+  age: 32
+Ⓐ;
 ```
+
+1번. [ ]
+
+2번. { }
+
+3번. ( )
+
+4번. < >
 
 
 
@@ -642,14 +680,11 @@ book.author = “Ethan"; // Create new properties by assignment.
 
 - 배열 (Arrays)
 
-  - 배열의 인덱스(key)는 연속적인 정수로 이뤄져있고, 0부터 시작한다.
   - 문법: 대괄호 [ ]를 사용한다.
-  - Properties of Array
-    - Array size is not fixed; you can add or remove elements at any time. 
-    - Arrays are not homogeneous; each individual element can be of any type. 
-    - Arrays are zero-based. That is, the first element in the array is element 0. 
 
-  - Arrays have a property length, which returns the number of elements in the array:
+  - 배열은 유동적이다. 런타임 중에 수정 가능하다.
+
+  - 배열의 인덱스(key)는 연속적인 정수로 이뤄져있고, 0부터 시작한다.
 
     ```javascript
     const arr = ['a', 'b', 'c'];
@@ -715,10 +750,6 @@ trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
   ```
 
 
-
-
-
------------ 여기서 마지막 문제 3번. 다음 중 객체인 자료형을 고르시오. ------------
 
 
 
