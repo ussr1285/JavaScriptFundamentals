@@ -104,7 +104,7 @@ JavaScript는 앞에서 배운 HTML(마크업 언어)과 CSS(스타일시트)와
 
         
 
-        ![220px-Node.js_logo.svg](./img/220px-Node.js_logo.svg.png)
+        ![220px-Node.js_logo.svg](https://github.com/ussr1285/JavaScriptFundamentals/blob/master/md%20%ED%8C%8C%EC%9D%BC/img/220px-Node.js_logo.svg.png?raw=true)
 
       - 또 다른 이유는 크롬 브라우저의 성능. Google이 JavaScript의 속도를 획기적으로 빠르게 만든 V8 엔진을 개발함 (훗날 이에 기반하여 Node.js 탄생하게 됨.)
 
@@ -673,6 +673,8 @@ var person = Ⓐ
 4번. < >
 
 
+
+[정답](2번)
 
 
 
